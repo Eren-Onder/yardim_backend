@@ -5,8 +5,11 @@ export default (sequelize, Sequelize) => {
       primaryKey: true,
       autoIncrement: true,
     },
-    adresse: {
+    strasse: {
       type: Sequelize.STRING,
+    },
+    wohn: {
+      type: Sequelize.INTEGER,
     },
   });
 };

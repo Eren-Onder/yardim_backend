@@ -5,5 +5,8 @@ export default (sequelize, Sequelize) => {
       primaryKey: true,
       autoIncrement: true,
     },
+    hilfart: {
+      type: Sequelize.STRING,
+    },
   });
 };

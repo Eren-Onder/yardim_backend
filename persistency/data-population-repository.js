@@ -1,7 +1,7 @@
-import db from "../models/_sequelize_setup_.js"
-import faker from 'faker';
+import db from "../models/_sequelize_setup_.js";
+import faker from "faker";
 
-export default function(){}
+export default function () {}
 /*
 setInterval(async () => {
 

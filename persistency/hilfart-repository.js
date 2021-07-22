@@ -2,14 +2,22 @@ import db from "../models/_sequelize_setup_.js";
 
 export async function getAll() {
   return await db.hilfart.findAll({
-    include: [{ model: db.adresse }, { model: db.kanton }],
+    include: [
+      { model: db.adresse },
+      { model: db.kanton },
+      { model: db.hilfestelle },
+    ],
   });
 }
 
 export async function findById(pId) {
   return await db.hilfart.findOne({
     where: { id: pId },
-    include: [{ model: db.adresse }, { model: db.kanton }],
+    include: [
+      { model: db.adresse },
+      { model: db.kanton },
+      { model: db.hilfestelle },
+    ],
   });
 }
 

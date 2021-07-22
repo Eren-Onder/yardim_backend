@@ -3,42 +3,42 @@ import db from "../models/_sequelize_setup_.js";
 export async function getAll() {
   return await db.enrollment.findAll({
     include: [
-      { model: db.student },
+      { model: db.hilfestelle },
       {
-        model: db.class,
-        include: [{ model: db.lecture }, { model: db.teacher }],
+        model: db.adresse,
+        include: [{ model: db.hilfart }, { model: db.kanton }],
       },
     ],
   });
 }
 
-export async function getAllByStundentId(pStudentId) {
+export async function getAllByHilfestelleId(pHilfestelleId) {
   return await db.enrollment.findAll({
     where: {
-      studentId: pStudentId,
+      hilfestelleId: pHilfestelleId,
     },
     include: [
-      { model: db.student },
+      { model: db.hilfestelle },
       {
-        model: db.class,
-        include: [{ model: db.lecture }, { model: db.teacher }],
+        model: db.adresse,
+        include: [{ model: db.hilfart }, { model: db.kanton }],
       },
     ],
   });
 }
 
-export async function getAllByTeacherId(pTeacherId) {
+export async function getAllByKantonId(pKantonId) {
   return await db.enrollment.findAll({
     include: [
-      { model: db.student },
+      { model: db.hilfestelle },
       {
-        model: db.class,
+        model: db.adresse,
         include: [
-          { model: db.lecture },
+          { model: db.hilfart },
           {
-            model: db.teacher,
+            model: db.kanton,
             where: {
-              id: pTeacherId,
+              id: pKantonId,
             },
           },
         ],
@@ -47,21 +47,21 @@ export async function getAllByTeacherId(pTeacherId) {
   });
 }
 
-export async function getAllByLectureId(pLectureId) {
+export async function getAllByHilfartId(pHilfartId) {
   return await db.enrollment.findAll({
     include: [
-      { model: db.student },
+      { model: db.hilfestelle },
       {
-        model: db.class,
+        model: db.adresse,
         include: [
           {
-            model: db.lecture,
+            model: db.hilfart,
             where: {
-              id: pLectureId,
+              id: pHilfartId,
             },
           },
           {
-            model: db.teacher,
+            model: db.kanton,
           },
         ],
       },
@@ -73,10 +73,10 @@ export async function findById(pId) {
   return await db.enrollment.findOne({
     where: { id: pId },
     include: [
-      { model: db.student },
+      { model: db.hilfestelle },
       {
-        model: db.class,
-        include: [{ model: db.lecture }, { model: db.teacher }],
+        model: db.adresse,
+        include: [{ model: db.hilfart }, { model: db.kanton }],
       },
     ],
   });

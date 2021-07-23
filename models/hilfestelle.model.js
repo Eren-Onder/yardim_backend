@@ -12,6 +12,9 @@ export default (sequelize, Sequelize) => {
     endtermin: {
       type: Sequelize.STRING,
     },
+    userInfo: {
+      type: Sequelize.STRING,
+    },
   });
 
   return Hilfestelle;

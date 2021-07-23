@@ -8,7 +8,7 @@ import cors from "cors";
 // Routers
 import hilfestellesRouter from "./routes/hilfestelle-routes.js";
 import kantonsRouter from "./routes/kanton-routes.js";
-import enrollmentsRouter from "./routes/enrollment-routes.js";
+import enrollmentsRouter from "./routes/enrollment-routes";
 import adressesRouter from "./routes/adresse-routes.js";
 import hilfartsRouter from "./routes/hilfart-routes.js";
 
@@ -22,7 +22,7 @@ app.use(cors());
 
 app.use("/hilfestelles", hilfestellesRouter);
 app.use("/kantons", kantonsRouter);
-app.use("/enrollments", enrollmentsRouter);
+
 app.use("/adresses", adressesRouter);
 app.use("/hilfarts", hilfartsRouter);
 

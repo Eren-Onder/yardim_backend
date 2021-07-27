@@ -1,10 +1,10 @@
 export default (sequelize, Sequelize) => {
   return sequelize.define("kanton", {
-    kanton: {
+    /* kanton: {
       type: Sequelize.STRING,
     },
     stadt: {
       type: Sequelize.STRING,
-    },
+    },*/
   });
 };

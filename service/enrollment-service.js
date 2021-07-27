@@ -24,6 +24,9 @@ export async function getAllEnrollments() {
 export async function getEnrollmentsByHilfestelleId(pHilfestelleId) {
   return await enrollmentRepository.getAllByHilfestelleId(pHilfestelleId);
 }
+export async function getEnrollmentsByHilfartId(pHilfartId) {
+  return await enrollmentRepository.getAllByHilfartId(pHilfartId);
+}
 
 export async function getEnrollmentsByKantonId(pKantonId) {
   return await enrollmentRepository.getAllByKantonId(pKantonId);

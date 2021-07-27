@@ -3,13 +3,30 @@ export default (sequelize, Sequelize) => {
     name: {
       type: Sequelize.STRING,
     },
-    email: {
+    kanton: {
       type: Sequelize.STRING,
     },
+    stadt: {
+      type: Sequelize.STRING,
+    },
+    strasse: {
+      type: Sequelize.STRING,
+    },
+    wohn: {
+      type: Sequelize.INTEGER,
+    },
+
     erforderlich: {
       type: Sequelize.STRING,
     },
     endtermin: {
+      type: Sequelize.STRING,
+    },
+
+    hilfart: {
+      type: Sequelize.STRING,
+    },
+    email: {
       type: Sequelize.STRING,
     },
     userInfo: {

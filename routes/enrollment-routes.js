@@ -1,5 +1,5 @@
 import express from "express";
-var router = express.Router();
+const router = express.Router();
 import * as enrollmentService from "../service/enrollment-service.js";
 
 import asyncHandler from "express-async-handler";
@@ -36,9 +36,9 @@ router.get(
 );
 
 router.get(
-  "/students/:studentId",
+  "/hilfestelles/:hilfestelleId",
   asyncHandler(async (req, res, next) => {
-    let enrollments = await enrollmentService.getEnrollmentsByStundentId(
+    let enrollments = await enrollmentService.getEnrollmentsByHilfestelleId(
       req.params.hilfestelleId
     );
     res.status(200).send(enrollments);
@@ -46,9 +46,9 @@ router.get(
 );
 
 router.get(
-  "/teachers/:teacherId",
+  "/kantons/:kantonId",
   asyncHandler(async (req, res, next) => {
-    let enrollments = await enrollmentService.getEnrollmentsByTeacherId(
+    let enrollments = await enrollmentService.getEnrollmentsByKantonId(
       req.params.kantonId
     );
     res.status(200).send(enrollments);
@@ -56,9 +56,9 @@ router.get(
 );
 
 router.get(
-  "/lectures/:lectureId",
+  "/hilfarts/:hilfartId",
   asyncHandler(async (req, res, next) => {
-    let enrollments = await enrollmentService.getEnrollmentsByLectureId(
+    let enrollments = await enrollmentService.getEnrollmentsByHilfartId(
       req.params.hilfArtId
     );
     res.status(200).send(enrollments);
@@ -66,9 +66,9 @@ router.get(
 );
 
 router.get(
-  "/classes/:classId",
+  "/adresses/:adresseId",
   asyncHandler(async (req, res, next) => {
-    let enrollments = await enrollmentService.getEnrollmentsByInstructorId(
+    let enrollments = await enrollmentService.getEnrollmentsByAdresseId(
       req.params.adresseId
     );
     res.status(200).send(enrollments);

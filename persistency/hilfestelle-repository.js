@@ -4,6 +4,14 @@ export async function getAll() {
   return await db.hilfestelle.findAll();
 }
 
+export async function getByAdminEmail(pEmail) {
+  return await db.hilfestelle.findAll({
+    where: {
+      userInfo: pEmail,
+    },
+  });
+}
+
 export async function findById(pId) {
   return await db.hilfestelle.findByPk(pId);
 }

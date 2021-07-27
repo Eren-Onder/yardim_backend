@@ -17,6 +17,18 @@ router.get(
       .send(await hilfestelleService.getHilfestelleById(req.params.id))
   )
 );
+
+router.get(
+  "/",
+  asyncHandler(async (req, res, next) =>
+    res
+      .status(200)
+      .send(
+        await hilfestelleService.getByAdminEmailHilfestelles(req.query.userInfo)
+      )
+  )
+);
+
 router.post(
   "/",
   asyncHandler(async (req, res, next) =>
